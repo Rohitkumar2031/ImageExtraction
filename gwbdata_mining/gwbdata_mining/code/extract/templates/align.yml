@@ -1,0 +1,15 @@
+issuer: greenway
+fields:
+  amount: Bill Total\s+(\d+,\d+)
+  date: Dt\s+(\d{1,2}\/\d{1,2}\/\d{4})
+  invoice_number: Invoice No\s+(\d+)
+keywords:
+  - Cash Customer
+lines:
+    start: Amount
+    end: Total
+    line: (?P<description>.+)\s+(?P<qty>\d+.\d+)\s+(?P<discount>\d+.\d+)\s+(?P<price>\d+,\d+)
+options:
+  currency: INR
+  decimal_separator: '.'
+

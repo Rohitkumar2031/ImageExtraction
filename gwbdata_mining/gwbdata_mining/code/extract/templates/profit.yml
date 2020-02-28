@@ -1,0 +1,16 @@
+issuer: profit
+fields:
+  amount: Invoice Total:\s+(\d+.)
+  date: (\d{4}\-\d{1,2}\-\d{1,2})
+  invoice_number: Invoice No.:\s+[A-Za-z]{3}\s+(\d+)
+keywords:
+  - Fashion Point
+lines:
+    start: Item
+    end:   Invoice Total:\s+(\d+.)
+    line: (?P<description>.+)\s+(?P<qty>\d+)\s+(?P<price>\d+\d+)
+options:
+  currency: INR
+  decimal_separator: '.'
+  date_formats:
+   - '%Y/%m/%d'

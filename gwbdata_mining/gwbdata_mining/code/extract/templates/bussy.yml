@@ -1,0 +1,14 @@
+issuer: Abc
+fields:
+  amount: Net Payable :\s+(\d+)
+  date: 01-04-2019
+  invoice_number: Invoice No/Date:\s(\d{1,2}\/\d{4}\-\d{1,2})
+keywords:
+  - Abc
+lines:
+    start: Qty.
+    end: Rupees
+    line: (?P<qty>\d+)\s+(?P<description>.+)\s+(?P<price>\d+.\d+)
+options:
+  currency: INR
+  decimal_separator: '.'

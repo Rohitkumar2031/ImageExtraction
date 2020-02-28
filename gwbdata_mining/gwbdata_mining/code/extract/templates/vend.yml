@@ -1,0 +1,16 @@
+issuer: shop241
+fields:
+ amount: Subtotal\s+Rs(\d+.)
+ date: (\d{1,2}\/\d{1,2}\/\d{4})
+ invoice_number: Receipt / Tax Invoice\s+#(\d+)
+keywords:
+ - https://shop241.vendhq.com/webregister/confirmation
+lines:
+    start: .
+    end:  Subtotal\s+Rs(\d+.)
+    line: (?P<description>.+)\s+(?P<qty>\d+.\d+)\s+(?P<price>\d+\d+)
+options:
+   currency: INR
+   decimal_separator: '.'
+   date_formats:
+   - '%m/%d/%Y'

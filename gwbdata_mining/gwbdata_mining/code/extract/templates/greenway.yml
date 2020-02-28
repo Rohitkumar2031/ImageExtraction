@@ -1,0 +1,15 @@
+issuer: greenway
+fields:
+  amount: Grand Total:\s+Rs (\d+)
+  date: 15-11-2019
+  invoice_number: Contact No:\s(\d+)
+keywords:
+  - greenway
+lines:
+    start: Item Name
+    end: \s+Grand Total
+    line: (?P<description>.+)\s+(?P<qty>\d+)\s+(?P<discount>\d+.\d+)\s+(?P<price>\d+\d+)
+options:
+  currency: INR
+  decimal_separator: '.'
+

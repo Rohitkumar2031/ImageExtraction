@@ -1,0 +1,16 @@
+issuer: dine24
+fields:
+  amount: Grand Total\s+(\d+.)
+  date: (\d{1,2}\/\d{1,2}\/\d{4})
+  invoice_number: Ph:\s(\d+)
+keywords:
+  - dine24
+lines:
+    start: Waiter
+    end: Grand Total\s+(\d+.)
+    line: (?P<qty>\d+)\s+(?P<description>.+)\s+(?P<price>\d+.\d+)
+options:
+  currency: INR
+  decimal_separator: '.'
+  date_formats:
+    - '%m/%d/%Y'

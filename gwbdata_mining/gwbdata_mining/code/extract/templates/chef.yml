@@ -1,0 +1,17 @@
+issuer: Chef
+fields:
+  amount: Grand Total :\s+(\d+)
+  date: Date\s+:\s+(\d{1,2}\/\d{1,2}\/\d{4})
+  invoice_number: INVOICE No :\s+([\w-]*)
+  
+keywords:
+  - admin@dinein1.epos
+lines:
+    start: \s+ITEM
+    end: Subtotal :\s+(\d+)
+    line: (?P<qty>\d+)\s+(?P<description>.+)\s+(?P<price>\d+.\d+)
+options:
+  currency: INR
+  decimal_separator: '.'
+  date_formats:
+    - '%d/%m/%Y'

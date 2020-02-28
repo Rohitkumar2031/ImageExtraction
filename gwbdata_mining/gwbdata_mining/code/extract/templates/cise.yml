@@ -1,0 +1,16 @@
+issuer: cise
+fields:
+  amount: Cash Paid :\s+(\d+.)
+  date: Date & Time :\s+(\d{1,2}\-\d{1,2}\-\d{4})
+  invoice_number: Contact :\s(\d+)
+keywords:
+  - info@cisepos.com
+lines:
+    start: QTY
+    end: Total :\s+(\d+.)
+    line: (?P<description>\d.+)\s+(?P<qty>\d+)\s+(?P<price>\d+.\d+)
+options:
+  currency: INR
+  decimal_separator: '.'
+  date_formats:
+    - '%d/%m/%Y'

@@ -1,0 +1,27 @@
+[
+    {
+        "amount": 4650.0,
+        "currency": "INR",
+        "date": "2020-02-18",
+        "desc": "Invoice from profit",
+        "invoice_number": "123456789",
+        "issuer": "profit",
+        "lines": [
+            {
+                "description": "Jeans 3 1300 297.46 297.46",
+                "price": "3900",
+                "qty": "0"
+            },
+            {
+                "description": "Shirt 1 750 40.18 40.18",
+                "price": "750",
+                "qty": "0"
+            },
+            {
+                "description": "Grand Total",
+                "price": "4650",
+                "qty": "4"
+            }
+        ]
+    }
+]

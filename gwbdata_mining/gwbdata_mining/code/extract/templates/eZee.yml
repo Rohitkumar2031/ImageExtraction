@@ -1,0 +1,17 @@
+issuer: dddd
+fields:
+  amount: Payable\s+(\d+)
+  date: Date:\s+(\d{1,2}\/\d{1,2}\/\d{4})
+  invoice_number: Receipt:\s+(\d+)
+keywords:
+  - dddd
+lines:
+    start: Item Name
+    end: \s+Bill Amount
+    line: (?P<description>.+)\s+(?P<qty>\d+.\d+)\s+(?P<price>\d+\d+)
+options:
+  currency: INR
+  decimal_separator: '.'
+  date_formats:
+    - '%d/%m/%Y'
+
